@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Js Animation</title>
+    <script src="jquery.js"></script>
+    <style>
+      .box {
+        width: 200px;
+        padding: 20px;
+        color: #000;
+        background: orchid;
+        margin-bottom: 10px;
+        position: absolute;
+        height: 200px;
+      }
+      button.animate {
+        margin-top: 279px;
+      }
+      .box2 {
+        width: 200px;
+        padding: 20px;
+        color: #000;
+        background: rgb(131, 112, 218);
+        margin-bottom: 10px;
+        position: absolute;
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Js Animation</h1>
+    <div class="box">
+      <h2>Animate box</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, hic
+        beatae. Atque, deleniti omnis? Magni enim autem animi dicta eveniet!
+      </p>
+    </div>
+    <button class="animate">Animate</button>
+    <button class="stop">Stop</button>
+    <div class="box2">
+      <h2>Animate box</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, hic
+        beatae. Atque, deleniti omnis? Magni enim autem animi dicta eveniet!
+      </p>
+    </div>
+
+    <button class="click">click</button>
+    <script>
+      $(document).ready(function () {
+        $(".animate").click(function () {
+          $(".box").animate(
+            {
+              left: "250px",
+              height: "+=150px",
+              width: "+=150px",
+            },
+            3000
+          );
+        });
+        $(".stop").click(function () {
+          $(".box").stop();
+        });
+        $(".click").click(function () {
+          $(".box2").css("background", "green").slideToggle(2000);
+        });
+      });
+    </script>
+  </body>
+</html>
